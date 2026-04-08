@@ -1,4 +1,8 @@
-typing
 fastapi
+uvicorn
 sqlmodel
 sqladmin
+itsdangerous
+python-multipart
+passlib
+bcrypt==4.0.1
