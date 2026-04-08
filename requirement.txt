@@ -1,0 +1,4 @@
+typing
+fastapi
+sqlmodel
+sqladmin
