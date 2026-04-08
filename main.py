@@ -1,4 +1,5 @@
 import uvicorn
+import os
 from typing import Optional
 from fastapi import FastAPI, Request
 from fastapi.responses import RedirectResponse
@@ -62,5 +63,6 @@ def root():
     return RedirectResponse(url="/admin")
 
 if __name__ == "__main__":
-    print(f"\n🔐 ВХІД: {ADMIN_USER} / {ADMIN_PASS}\n")
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    print(f"\n СЕРВЕР ЗАПУСКАЄТЬСЯ НА ПОРТУ {port}")
+    uvicorn.run(app, host="0.0.0.0", port=port)
